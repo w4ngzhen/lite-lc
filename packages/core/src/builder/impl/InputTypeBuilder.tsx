@@ -5,9 +5,10 @@ import {Input} from "antd";
 export class InputTypeBuilder implements TypeBuilder {
     build(builderContext: TypeBuilderContext,
           childrenReactNode?: ReactNode[]): ReactNode {
+        const {path} = builderContext;
         // 使用antd的Input
         return (
-            <Input/>
+            <Input key={path} />
         )
     }
 }

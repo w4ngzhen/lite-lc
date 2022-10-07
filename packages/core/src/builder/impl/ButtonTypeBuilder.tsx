@@ -5,11 +5,12 @@ import {Button} from "antd";
 export class ButtonTypeBuilder implements TypeBuilder {
     build(builderContext: TypeBuilderContext,
           childrenReactNode?: ReactNode[]): ReactNode {
-        const {elementNode} = builderContext;
+        const {path, elementNode} = builderContext;
         const {text = 'button'} = elementNode.props;
         // 直接使用antd的Button
         return (
             <Button
+                key={path}
                 type='primary'>
                 {text}
             </Button>

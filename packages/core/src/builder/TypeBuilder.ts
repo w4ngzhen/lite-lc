@@ -5,6 +5,10 @@ import {ElementNode} from "../meta/ElementNode";
  * 构建器构建上下文，至少包含ElementNode的相关数据
  */
 export interface TypeBuilderContext {
+    /**
+     * path：让每个TypeBuilder知道当前构建的节点所在的路径
+     */
+    path: string;
     elementNode: Omit<ElementNode, ''>;
 }
 

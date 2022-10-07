@@ -1,0 +1,13 @@
+{
+  "name": "lite-lc",
+  "version": "1.0.0",
+  "description": "A lite lowcode project for learning.",
+  "main": "index.js",
+  "repository": "https://github.com/w4ngzhen/lite-lc",
+  "author": "w4ngzhen",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

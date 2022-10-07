@@ -1,0 +1,38 @@
+{
+  "name": "@lite-lc/example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "w4ngzhen",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build"
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.4.5",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
+    "craco-less": "^2.0.0",
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "@lite-lc/core": "1.0.0",
+    "antd": "^4.23.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

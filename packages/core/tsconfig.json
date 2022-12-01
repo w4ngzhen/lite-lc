@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "emitDeclarationOnly": true,
+    "target": "ES6",
     "declaration": true,
     "esModuleInterop": true,
     "jsx": "react",

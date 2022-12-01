@@ -28,15 +28,15 @@ export class BuildEngine {
 
     /**
      * 构建：通过传入ElementNode信息，得到该节点对应供React渲染的ReactNode
-     * @param rootEleNode
+     * @param originRootEleNode
      * @param rootPath
      */
-    private innerBuild(rootEleNode: ElementNode, rootPath: string): ReactNode | undefined {
-        if (!rootEleNode) {
+    private innerBuild(originRootEleNode: ElementNode, rootPath: string): ReactNode | undefined {
+        if (!originRootEleNode) {
             return undefined;
         }
 
-        const {type, children} = rootEleNode;
+        const {type, children} = originRootEleNode;
 
         // 如果有子元素，则递归调用自身，获取子元素处理后的ReactNode
         const childrenReactNode =
@@ -58,7 +58,7 @@ export class BuildEngine {
         const reactNode = typeBuilder.build(
             {
                 path: rootPath,
-                elementNode: rootEleNode
+                elementNode: originRootEleNode
             },
             childrenReactNode
         )
@@ -68,7 +68,7 @@ export class BuildEngine {
             console.debug('进入组件构建切面处理')
             return this._componentBuildAspectHandler(reactNode, {
                 path: rootPath,
-                elementNode: rootEleNode
+                elementNode: originRootEleNode
             })
         }
 

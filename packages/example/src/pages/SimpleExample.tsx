@@ -1,11 +1,11 @@
-import {BuildEngine} from "@lite-lc/core";
+import {RuntimeBuildEngine} from "@lite-lc/core";
 import {ChangeEvent, useState} from "react";
 import {Input} from 'antd';
 
 export function SimpleExample() {
 
     // 使用构建引擎
-    const [buildEngine] = useState(new BuildEngine());
+    const [runtimeBuildEngine] = useState(new RuntimeBuildEngine());
 
     // 使用state存储一个schema的字符串
     const [elementNodeJson, setElementNodeJson] = useState(JSON.stringify({
@@ -29,7 +29,7 @@ export function SimpleExample() {
     let reactNode;
     try {
         const eleNode = JSON.parse(elementNodeJson);
-        reactNode = buildEngine.build(eleNode);
+        reactNode = runtimeBuildEngine.build(eleNode);
     } catch (e) {
         // 序列化出异常，返回JSON格式出错
         reactNode = <div>JSON格式出错</div>

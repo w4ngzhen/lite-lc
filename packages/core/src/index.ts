@@ -15,5 +15,5 @@ export {
 } from './builder/TypeBuilderManager';
 
 export {
-    BuildEngine
-} from './engine/BuildEngine';
+    RuntimeBuildEngine
+} from './engine/RuntimeBuildEngine';

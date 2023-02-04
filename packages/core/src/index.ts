@@ -17,3 +17,5 @@ export {
 export {
     RuntimeBuildEngine
 } from './engine/RuntimeBuildEngine';
+
+export * from './canvas/DesignCanvas';

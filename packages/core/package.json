@@ -8,7 +8,8 @@
   "private": false,
   "scripts": {
     "build-js": "webpack --config webpack.config.js",
-    "build-type": "tsc"
+    "build-type": "tsc",
+    "build:all": "yarn build-type && yarn build-js"
   },
   "peerDependencies": {
     "antd": "^4.23.2",

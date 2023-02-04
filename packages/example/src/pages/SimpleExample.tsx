@@ -1,11 +1,8 @@
-import {RuntimeBuildEngine} from "@lite-lc/core";
 import {ChangeEvent, useState} from "react";
 import {Input} from 'antd';
+import {DesignCanvas} from "@lite-lc/core";
 
 export function SimpleExample() {
-
-    // 使用构建引擎
-    const [runtimeBuildEngine] = useState(new RuntimeBuildEngine());
 
     // 使用state存储一个schema的字符串
     const [elementNodeJson, setElementNodeJson] = useState(JSON.stringify({
@@ -26,15 +23,6 @@ export function SimpleExample() {
         ]
     }, null, 2))
 
-    let reactNode;
-    try {
-        const eleNode = JSON.parse(elementNodeJson);
-        reactNode = runtimeBuildEngine.build(eleNode);
-    } catch (e) {
-        // 序列化出异常，返回JSON格式出错
-        reactNode = <div>JSON格式出错</div>
-    }
-
     return (
         <div style={{width: '100%', height: '100%', padding: '10px'}}>
             <div style={{width: '100%', height: 'calc(50%)'}}>
@@ -48,7 +36,7 @@ export function SimpleExample() {
                     }}/>
             </div>
             <div style={{width: '100%', height: 'calc(50%)', border: '1px solid gray'}}>
-                {reactNode}
+                <DesignCanvas rootNodeSchemaJson={elementNodeJson}/>
             </div>
         </div>
     );

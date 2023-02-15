@@ -5,6 +5,7 @@
     "moduleResolution": "Node",
     "declaration": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "jsx": "react",
     "outDir": "./dist/types"
   }

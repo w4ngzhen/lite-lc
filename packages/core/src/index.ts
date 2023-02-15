@@ -1,5 +1,3 @@
-import 'antd/dist/antd.less';
-
 export type {
     ElementNode
 } from './meta/ElementNode';

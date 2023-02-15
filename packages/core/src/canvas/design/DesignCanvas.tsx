@@ -1,5 +1,5 @@
 import React, {useMemo, useState} from "react";
-import {BuildEngine} from "../engine/BuildEngine";
+import {BuildEngine} from "../../engine/BuildEngine";
 import {ElementNodeDesignWrapper, ElementNodeDesignWrapperProps} from "./ElementNodeDesignWrapper";
 
 interface DesignCanvasProps {

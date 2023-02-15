@@ -18,7 +18,23 @@ export function SimpleExample() {
                 },
             },
             {
-                "type": "input"
+                "type": "page",
+                "children": [
+                    {
+                        "type": "button",
+                        "props": {
+                            "size": "blue" // button的size配置
+                        },
+                    },
+                    {
+                        "type": "page",
+                        "children": [
+                            {
+                                "type": "input"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }, null, 2))

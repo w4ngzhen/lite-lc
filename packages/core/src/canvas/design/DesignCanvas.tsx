@@ -2,6 +2,7 @@ import React, {useMemo, useState} from "react";
 import {BuildEngine} from "../../engine/BuildEngine";
 import {ComponentNodeDesignWrapper, ComponentNodeDesignWrapperProps} from "./ComponentNodeDesignWrapper";
 import {ComponentNode} from "../../meta/ComponentNode";
+import {ComponentNodeTreeDesignPanel} from "./ComponentNodeTreeDesignPanel";
 
 interface DesignCanvasProps {
     /**
@@ -62,9 +63,32 @@ export const DesignCanvas = (props: DesignCanvasProps) => {
         <div style={{
             width: '100%',
             height: '100%',
-            padding: '5px'
+            padding: '5px',
+            display: 'flex',
+            flexDirection: 'row'
         }}>
-            {renderComponent}
+            <div style={{
+                width: '250px',
+                height: '100%'
+            }}>
+                <ComponentNodeTreeDesignPanel
+                    componentNode={componentNode}
+                    selectedComponentNodePath={selectedNodePath}
+                    onComponentNodeSelected={(selectedPath) => {
+                        if (selectedPath === '') {
+                            // 代表再次点击节点，取消了选中
+                            console.debug('取消选中');
+                        }
+                        setSelectedNodePath(selectedPath);
+                    }}
+                />
+            </div>
+            <div style={{
+                width: 'calc(100% - 250px)',
+                height: '100%'
+            }}>
+                {renderComponent}
+            </div>
         </div>
     )
 
